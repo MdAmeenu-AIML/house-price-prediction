@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
 # Sample house data
@@ -14,11 +15,25 @@ df = pd.DataFrame(data)
 X = df[["Area"]]
 y = df["Price"]
 
-# Train the model
+# Train model
 model = LinearRegression()
 model.fit(X, y)
 
-# Predict price for 1700 sq ft
+# Prediction
 prediction = model.predict([[1700]])
 
 print("Predicted House Price:", prediction[0])
+
+# Plot points
+plt.scatter(X, y)
+
+# Regression line
+plt.plot(X, model.predict(X))
+
+# Labels
+plt.xlabel("Area")
+plt.ylabel("Price")
+plt.title("House Price Prediction")
+
+# Show graph
+plt.show()
