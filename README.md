@@ -1,5 +1,3 @@
-# house-price-prediction
-Beginner machine learning project using Python and Linear Regression.
 # House Price Prediction
 
 Beginner Machine Learning project using Python and Linear Regression.
