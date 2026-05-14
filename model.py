@@ -3,7 +3,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 # Load dataset
-df = pd.read_csv("house_data.csv")
+df = pd.read_csv("house_data5.csv")
 
 # Features and target
 X = df[["Area", "Bedrooms", "Bathrooms", "Age"]]
