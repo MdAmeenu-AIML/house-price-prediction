@@ -17,6 +17,8 @@ Beginner Machine Learning project using Python and Linear Regression.
 pip install -r requirements.txt
 python model.py
 ```
+## Live Demo
 
+[Open Web App](https://house-price-prediction-bzue6dku4itoxhvatrfspt.streamlit.app/)
 ## Author
-Mohammed Ameen
+Mohammed Ameen ul Aman
