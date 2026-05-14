@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
@@ -7,10 +6,10 @@ from sklearn.model_selection import train_test_split
 df = pd.read_csv("house_data.csv")
 
 # Features and target
-X = df[["Area"]]
+X = df[["Area", "Bedrooms", "Bathrooms", "Age"]]
 y = df["Price"]
 
-# Split dataset
+# Split data
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
@@ -19,21 +18,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-# Predict
-prediction = model.predict([[1700]])
+# Accuracy
+accuracy = model.score(X_test, y_test)
+
+# Prediction
+prediction = model.predict([[2100, 4, 3, 2]])
 
 print("Predicted House Price:", prediction[0])
-
-# Accuracy
-score = model.score(X_test, y_test)
-print("Model Accuracy:", score)
-
-# Plot
-plt.scatter(X, y)
-plt.plot(X, model.predict(X))
-
-plt.xlabel("Area")
-plt.ylabel("Price")
-plt.title("House Price Prediction V3")
-
-plt.show()
+print("Model Accuracy:", accuracy)
